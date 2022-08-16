@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy</title>
+    <link rel="stylesheet" href="./public/output.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav  class="h-24 flex justify-center items-center p-4 transition-all duration-300 delay-1000 ease-linear z-15">
+        <div class="flex container justify-between bg-transparent sticky top-0">
+            <span class="md:hidden flex justify-center items-center bars"><i class="fas fa-bars"></i></span>
+
+            <ul class="hidden md:flex text-2xl text-white space-x-4">
+                <li class="transition-all hover:text-red-700 duration-600 delay-150 cursor-pointer "><a href="./index.html">Home</a></li>
+                <li class="transition-all hover:text-red-700 duration-600  delay-150 cursor-pointer"><a href="./products.html">Products</a></li>
+                <li class="transition-all hover:text-red-700 duration-600  delay-150 cursor-pointer"><a href="./about.html">About</a></li>
+            </ul>
+            <img src="./public/images/logo.svg" alt="store logo" />
+            <div>
+                <span class="text-2xl hover:cursor-pointer relative cart">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div
+                    class="absolute h-[30px] w-[30px] top-[-10px] right-[-10px]  rounded-full  bg-red-300 grid place-items-center">
+                    <span id="totalItems">0</span>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="sidebar-overlay fixed top-0 left-0 w-full h-full -z-10 opacity-0 bg-slate-800 grid place-items-center">
+        <aside class="w-11/12 h-[95vh] max-w-[620px] bg-white rounded-md relative scale-0 transition-all">
+          <!-- close -->
+          <button class="sidebar-close absolute top-4 right-4 cursor-pointer">
+            <i class="fas fa-times"></i>
+          </button>
+          <!-- links -->
+          <ul class="p-6 space-y-2 capitalize ">
+            <li>
+              <a href="index.html" class="sidebar-link">
+                <i class="fas fa-home fa-fw"></i>
+                home
+              </a>
+            </li>
+            <li>
+              <a href="products.html" class="sidebar-link">
+                <i class="fas fa-couch fa-fw"></i>
+                products
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="sidebar-link">
+                <i class="fas fa-book fa-fw"></i>
+                about
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+    <section class="min-h-screen bg-hero bg-no-repeat bg-cover bg-center -mt-24 grid place-items-center p-4 ">
+        <div class="container mx-auto text-white capitalize  ">
+            <h1 class=" text-4xl  md:text-6xl lg:text-8xl italic">rest,relax,unwind</h1>
+            <p class="text-2xl md:text-4xl lg:text-6xl">Embrace your choices - we do</p>
+            <button class="text-xl mt-4 py-2 px-5 border-slate-800 backdrop-blur-md">Show Now</button>
+        </div>
+    </section>
+
+    <div class="cart-overlay fixed top-0 left-0 h-full w-full opacity-0 bg-slate-500/60 transition-all duration-1000 -z-10 ">
+        <aside
+            class="w-full h-full fixed top-0 right-0 max-w-xl  bg-orange-700 z-10 translate-x-full transition-all duration-1000 ease-linear grid items py-8 px-2 overflow-scroll">
+            <button class="cart-close absolute top-2 left-2">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+                <header class="text-center text-2xl uppercase">your Bag</header>
+                <div class="cart_items"></div>
+                <div class="text-center ">
+                    <h1 class="mb-6 total-money">total</h1>
+                    <button class="mb-4 px-6 text-lg uppercase font-bold bg-slate-400">check out</button>
+                </div>
+            
+        </aside>
+    </div>
+
+    <section class="container pt-3  min-h-[300px] grid place-items-center mx-auto gap-1 ">
+        <h1 class="text-center text-6xl text-font my-4">/ Featured</h1>
+        <div  id="products-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-3 container px-3 md:px-8">
+            <h2 class="absolute inset-1/2 ">loading......</h2>
+
+        </div>
+        <button class="my-8 bg-orange-600 text-2xl rounded-md px-9 py-2"><a href="./products.html">All Products</a></button>
+    </section>
+    <script src="./public/app.js" type="module"></script>
+</body>
+</html>

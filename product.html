@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="./public/output.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="h-24  flex justify-center items-center p-4">
+        <div class="flex container justify-between bg-transparent">
+            <span class="md:hidden flex justify-center items-center bars"><i class="fas fa-bars"></i></span>
+
+            <ul class="hidden md:flex text-2xl text-black space-x-4">
+                <li class="transition-all hover:text-red-700 duration-600 delay-150 cursor-pointer "><a
+                        href="./index.html">Home</a></li>
+                <li class="transition-all hover:text-red-700 duration-600  delay-150 cursor-pointer"><a
+                        href="./products.html">Products</a></li>
+                <li class="transition-all hover:text-red-700 duration-600  delay-150 cursor-pointer"><a
+                        href="./about.html">About</a></li>
+            </ul>
+            <img src="./public/images/logo.svg" alt="store logo" />
+            <div>
+                <span class="text-2xl hover:cursor-pointer relative cart">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div
+                    class="absolute h-[30px] w-[30px] top-[-10px] right-[-10px]  rounded-full  bg-red-300 grid place-items-center">
+                    <span id="totalItems">0</span>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+      
+    <div class="sidebar-overlay fixed top-0 left-0 w-full h-full -z-10 opacity-0 bg-slate-800 grid place-items-center">
+      <aside class="w-11/12 h-[95vh] max-w-[620px] bg-white rounded-md relative scale-0 transition-all">
+        <!-- close -->
+        <button class="sidebar-close absolute top-4 right-4 cursor-pointer">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- links -->
+        <ul class="p-6 space-y-2 capitalize ">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <i class="fas fa-home fa-fw"></i>
+              home
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="sidebar-link">
+              <i class="fas fa-couch fa-fw"></i>
+              products
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="sidebar-link">
+              <i class="fas fa-book fa-fw"></i>
+              about
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    <section class="h-[20vh] bg-blue-100 grid place-items-center ">
+        <div class="container">
+            <h1 class="text-3xl title ">Home/Products</h1>
+        </div>
+    </section>
+    <div
+    class="cart-overlay fixed top-0 left-0 h-full w-full opacity-0 bg-slate-500/60 transition-all duration-1000 -z-10 ">
+   
+   
+    <aside
+        class="w-full h-full fixed top-0 right-0 max-w-xl  bg-orange-700 z-10 translate-x-full transition-all duration-1000 ease-linear grid items py-8 px-2 overflow-scroll">
+        <button class="cart-close absolute top-2 left-2">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+
+        <header class="text-center text-2xl uppercase">your Bag</header>
+        <div class="cart_items"></div>
+        <div class="text-center ">
+            <h1 class="mb-6 total-money">total</h1>
+            <button class="mb-4 px-6 text-lg uppercase font-bold bg-slate-400">check out</button>
+        </div>
+
+    </aside>
+    </div>
+
+
+    <section class="grid place-items-center py-10">
+        <div class=" single-product-center container grid md:grid-cols-2 place-items-center px-20 gap-4">
+          <img
+            src="./images/main-bcg.jpeg"
+            class="single-product-img lg:h-[400px] w-full object-cover h-[450px] rounded-lg"
+            alt=""
+          />
+          <article class="single-product-info">
+            <div>
+              <h2 class="single-product-title text-4xl font-bold uppercase ">couch</h2>
+              <p class="single-product-company  text-2xl text-slanted">
+                by marcos
+              </p>
+              <p class="single-product-price">$30.00</p>
+              <div class="single-product-colors"></div>
+              <p class="single-product-desc py-4 text-xl italic">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
+                modi? Minima libero doloremque necessitatibus! Praesentium
+                recusandae quod nesciunt animi voluptatem!
+              </p>
+              <button class="addToCartBtn btn bg-orange-900 text-2xl uppercase font-boold rounded-lg px-4 py-2" data-id="id">
+                add to cart
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div class=" loading fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-100">
+        <h1 class="text-2xl">Loading...</h1>
+     </div>
+    <script src="./public/js/product.js" type="module"></script>
+</body>
+</html>
